@@ -1,0 +1,27 @@
+== 运行环境（本机实测，非推测）==
+
+操作系统        : Windows-11-10.0.26300-SP0
+CPU             : AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD（32 线程）
+内存            : 32 GB（系统标称；可用约 31.2 GB）
+显卡            : NVIDIA GeForce RTX 5070 Ti Laptop GPU, 12227 MiB, 591.86
+显存            : 12227 MiB ≈ 11.9 GiB
+推理框架        : ollama version is 0.40.18
+
+== 模型 ==
+名称            : modelscope.cn/unsloth/DeepSeek-R1-Distill-Qwen-14B-GGUF:latest
+参数量          : 14.8B
+量化            : Q4_K_M
+格式            : gguf / runner ggml
+上下文长度      : 131072
+权重体积        : 8988111242 字节 ≈ 8.4 GB
+模型指纹 sha256 : 548f89026cd4d6f0f689835a535a135d2411f18c55ac1c1b5e1821a0df74f24a
+下载完成时间    : 2026-11-21T18:57:34.0819271+08:00
+
+== 实测性能 ==
+生成速度        : 约 46 tok/s（约 21 ms/token）
+一次 300 字排故回答: 812 token / 17.8 秒（含思考过程被裁掉，见 08 号文件）
+
+== 说明 ==
+- 权重文件不入包，仅提供模型名与指纹，评审可用同名同量化模型复现。
+- 本地模型与 ComfyUI(SDXL) 不能同时加载，12GB 显存下同一次只跑一个吃显存的任务。
+- 推理全程在本机完成，不依赖任何在线 API。
